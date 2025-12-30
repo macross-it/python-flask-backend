@@ -1,0 +1,18 @@
+version: 1
+applications:
+  - appRoot: .
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - echo "Starting Docker build"
+            - docker build -t flask-backend .
+        build:
+          commands:
+            - echo "Docker build finished"
+      artifacts:
+        baseDirectory: /
+        files:
+          - '**/*'
+      cache:
+        paths: []
