@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return jsonify(message="Hello World from Flask!")
+    return {"status": "Backend running on Amplify"}
 
 @app.route("/health")
 def health():
